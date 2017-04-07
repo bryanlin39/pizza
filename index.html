@@ -17,6 +17,7 @@
             <h3>Build your pizza:</h3>
             <form id="pizza-selections">
               <div class="form-group">
+                <p>What size pizza would you like?</p>
                 <select class="form-control" id="size">
                   <option>Small</option>
                   <option>Medium</option>
@@ -27,21 +28,21 @@
 
               <div class="form-group" id="standard-toppings">
                 <p>Select your standard toppings:</p>
-                <input type="checkbox" name="standard" value="pepperoni">Pepperoni<br>
-                <input type="checkbox" name="standard" value="sausage">Sausage<br>
-                <input type="checkbox" name="standard" value="mushroom">Mushroom<br>
-                <input type="checkbox" name="standard" value="garlic">Garlic<br>
+                <input type="checkbox" name="standard" value=" Pepperoni">Pepperoni<br>
+                <input type="checkbox" name="standard" value=" Sausage">Sausage<br>
+                <input type="checkbox" name="standard" value=" Mushroom">Mushroom<br>
+                <input type="checkbox" name="standard" value=" Garlic">Garlic<br>
               </div>
 
               <div class="form-group" id="premium-toppings">
                 <p>Select your premium toppings:</p>
-                <input type="checkbox" name="premium" value="prosciutto">Prosciutto<br>
-                <input type="checkbox" name="premium" value="porkbelly">Pork Belly<br>
-                <input type="checkbox" name="premium" value="artichoke">Artichoke<br>
-                <input type="checkbox" name="premium" value="truffle">Truffle<br>
+                <input type="checkbox" name="premium" value=" Prosciutto">Prosciutto<br>
+                <input type="checkbox" name="premium" value=" Pork Belly">Pork Belly<br>
+                <input type="checkbox" name="premium" value=" Artichoke">Artichoke<br>
+                <input type="checkbox" name="premium" value=" Truffle">Truffle<br>
               </div>
 
-              <button type="submit" class="btn btn-danger" id="build">Fire Your Pizza in the Oven!</button>
+              <button type="submit" class="btn btn-danger" id="build">Fire Up Your Pizza in the Oven!</button>
             </form>
           </div><!-- column pizza selections -->
 
@@ -52,7 +53,10 @@
           </div>
 
           <div class="col-md-4 well" id="pizza-details">
-
+            <h3>Pizza # <span id="pizza-number"></span></h3>
+            <h4><b>Size: </b><span id="pizza-size"></span></h4>
+            <h4><b>Standard Toppings:</b><span id="pizza-standard-toppings"></span></h4>
+            <h4><b>Premium Toppings:</b><span id="pizza-premium-toppings"></span></h4>
           </div>
         </div><!-- row pizza -->
 

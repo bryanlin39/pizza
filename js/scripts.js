@@ -22,7 +22,6 @@ $(document).ready(function() {
     pizzaCounter += 1;
 
     // assigning user inputs into variables
-    var pizzaNumber = "Pizza #" + pizzaCounter;
     var inputtedSize = $("#size").val();
     var inputtedStandardToppings = [];
     var inputtedPremiumToppings = [];
@@ -36,9 +35,20 @@ $(document).ready(function() {
     });
 
     // call Pizza constructor
-    var newPizza = new Pizza(pizzaNumber, inputtedSize, inputtedStandardToppings, inputtedPremiumToppings);
+    var newPizza = new Pizza(pizzaCounter, inputtedSize, inputtedStandardToppings, inputtedPremiumToppings);
 
-    console.log(newPizza);
+    $("#oven").append("<li><span class='pizza'>Pizza # " + newPizza.number + ", " + newPizza.size + "</span></li>");
+
+    $(".pizza").click(function() {
+      $("#pizza-details").show();
+      $("#pizza-number").text(newPizza.number);
+      $("#pizza-size").text(newPizza.size);
+      $("#pizza-standard-toppings").text(newPizza.standard);
+      $("#pizza-premium-toppings").text(newPizza.premium);
+    });
+
+    $("#pizza-selections").trigger("reset");
+
 
     // var newPizza = new Pizza(inputtedSize, inputtedStandard, inputtedPremium)
 
