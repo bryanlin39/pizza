@@ -1,0 +1,21 @@
+#inputs {
+  display: none;
+}
+
+#outputs {
+  display: none;
+}
+
+#welcome-page {
+  text-align: center;
+  margin-top: 200px;
+  background-image: url("/img/welcome.jpg")
+}
+
+#start {
+  background-color: white;
+  font-weight: bold;
+  font-size: 5vmin;
+  padding: 2%;
+  box-shadow: grey 2px 2px 4px;
+}

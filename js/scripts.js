@@ -27,6 +27,11 @@ Pizza.prototype.pizzaPrice = function(size, standard, premium) {
 // User Interface Logic
 $(document).ready(function() {
 
+  $("#start").click(function(event) {
+    $("#welcome-page").slideUp();
+    $("#inputs").show();
+  });
+
   // on build button click
   $("#build").click(function(event) {
     event.preventDefault();
@@ -65,21 +70,48 @@ $(document).ready(function() {
     });
 
     $("#pizza-selections").trigger("reset");
-    // end build button click
   });
+  // end build button click
 
   // on submit button click
   $("#submit-order").click(function(event) {
     event.preventDefault();
 
     var tax = sumPizzaPrice * 0.1;
-    var orderTotalPrice = sumPizzaPrice + tax;
+    var deliveryPrice = 0;
+    var inputtedName = $("#name").val();
+    var inputtedEmail = $("#email").val();
+    var deliveryOption = $("#delivery").val();
 
+    if (inputtedName === "" || inputtedEmail === "") {
+      alert("Please enter a name for your order and a valid email for your receipt.");
+      return;
+    }
+
+    $("#inputs").hide();
+    $("#outputs").slideDown();
+
+    // delivery option
+    if (deliveryOption === "delivery") {
+      $("#pickup-comment").hide();
+      deliveryPrice = 4;
+    } else {
+      $("#delivery-comment").hide();
+      $("#show-delivery").hide();
+    }
+
+    var orderTotalPrice = sumPizzaPrice + tax + deliveryPrice;
+
+    // append to note
+    $("#inputted-name").text(inputtedName);
+    $("#total-price").text(orderTotalPrice.toFixed(2));
+    $("#inputted-email").text(inputtedEmail);
 
     // append to receipt
     $("#receipt-subtotal").text(sumPizzaPrice.toFixed(2));
     $("#receipt-tax").text(tax.toFixed(2));
+    $("#receipt-delivery").text(deliveryPrice.toFixed(2))
     $("#receipt-total").text(orderTotalPrice.toFixed(2));
   });
-
+  // end submit click
 });

@@ -9,7 +9,10 @@
   </head>
   <body>
     <div class="container-fluid">
-      <h1>Build Your Custom Wood-Fired Pizza</h1>
+      <div id="welcome-page">
+        <h1>Welcome!</h1>
+        <button type="button" class="btn" id="start">Start Building Your Custom Wood-Fired Pizzas</button>
+      </div>
 
       <div class="container-fluid" id="inputs">
         <div class="row" id="pizza">
@@ -114,7 +117,7 @@
         <h2>Thank you for your order, <span id="inputted-name"></span>!</h2>
         <h3>Your order total is $<span id="total-price"></span>. A copy of your receipt has been sent to your email at <span id="inputted-email"></span>.</h3>
         <h4 id="pickup-comment">Your pizzas will be ready for pickup in approximately 30 minutes.</h4>
-        <h4 id="delivery-comment">Your pizzas will be delivered in approximately 30 minutes.</h4>
+        <h4 id="delivery-comment">Your pizzas will be delivered to the address provided in approximately 30 minutes.</h4>
 
         <div class="well" id="receipt">
           <h3>Receipt:</h3>
@@ -123,6 +126,7 @@
             </ul>
           <h4><b>Subtotal: </b>$<span id="receipt-subtotal"></span></h4>
           <h4><b>Tax (10%): </b>$<span id="receipt-tax"></span></h4>
+          <h4 id="show-delivery"><b>Delivery: </b>$<span id="receipt-delivery"></span></h4>
           <h3>Order Total: $<span id="receipt-total"></span></h4>
       </div><!-- container outputs -->
     </div><!-- container overall body -->
