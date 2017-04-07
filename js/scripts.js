@@ -1,5 +1,5 @@
 // Business Logic
-var totalPrice = 0;
+var sumPizzaPrice = 0;
 var pizzaCounter = 0;
 
 function Pizza(number, size, standard, premium) {
@@ -20,20 +20,20 @@ Pizza.prototype.pizzaPrice = function(size, standard, premium) {
     sizePrice *= 2.5;
   }
   pizzaPrice = (pizzaPrice + (standard.length*2) + (premium.length*3)) * sizePrice;
-  totalPrice += pizzaPrice;
+  sumPizzaPrice += pizzaPrice;
   return pizzaPrice;
 }
 
 // User Interface Logic
 $(document).ready(function() {
 
-  // on-click for build button
+  // on build button click
   $("#build").click(function(event) {
     event.preventDefault();
 
     pizzaCounter += 1;
 
-    // assigning user inputs into variables
+    // assign user inputs into variables
     var inputtedSize = $("#size").val();
     var inputtedStandardToppings = [];
     var inputtedPremiumToppings = [];
@@ -51,10 +51,11 @@ $(document).ready(function() {
 
     var pizzaPrice = newPizza.pizzaPrice(newPizza.size, newPizza.standard, newPizza.premium);
 
-    console.log(totalPrice, pizzaPrice);
-
-    // append pizzas list and show pizza details
+    // append to pizzas list and receipt list
     $("#oven").append("<li><span class='pizza'>Pizza # " + newPizza.number + ", " + newPizza.size + "</span></li>");
+    $("#receipt-pizzas").append("<li>Pizza # " + newPizza.number + ": $" + pizzaPrice.toFixed(2) + "</li>")
+
+    // show pizza details
     $(".pizza").last().click(function() {
       $("#pizza-details").show();
       $("#pizza-number").last().text(newPizza.number);
@@ -67,6 +68,18 @@ $(document).ready(function() {
     // end build button click
   });
 
+  // on submit button click
+  $("#submit-order").click(function(event) {
+    event.preventDefault();
 
+    var tax = sumPizzaPrice * 0.1;
+    var orderTotalPrice = sumPizzaPrice + tax;
+
+
+    // append to receipt
+    $("#receipt-subtotal").text(sumPizzaPrice.toFixed(2));
+    $("#receipt-tax").text(tax.toFixed(2));
+    $("#receipt-total").text(orderTotalPrice.toFixed(2));
+  });
 
 });
