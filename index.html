@@ -5,9 +5,111 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.2.0.js"></script>
     <script src="js/scripts.js"></script>
-    <title>Pizza Ordering System</title>
+    <title>Pizzeria Seattle</title>
   </head>
   <body>
+    <div class="container-fluid">
+      <h1>Build Your Custom Wood-Fired Pizza</h1>
 
+      <div class="container-fluid" id="inputs">
+        <div class="row" id="pizza">
+          <div class="col-md-4">
+            <h3>Build your pizza:</h3>
+            <form id="pizza-selections">
+              <div class="form-group">
+                <select class="form-control" id="size">
+                  <option>Small</option>
+                  <option>Medium</option>
+                  <option>Large</option>
+                  <option>Party</option>
+                </select>
+              </div>
+
+              <div class="form-group" id="standard-toppings">
+                <p>Select your standard toppings:</p>
+                <input type="checkbox" name="standard" value="pepperoni">Pepperoni<br>
+                <input type="checkbox" name="standard" value="sausage">Sausage<br>
+                <input type="checkbox" name="standard" value="mushroom">Mushroom<br>
+                <input type="checkbox" name="standard" value="jalapeno">Garlic<br>
+              </div>
+
+              <div class="form-group" id="premium-toppings">
+                <p>Select your premium toppings:</p>
+                <input type="checkbox" name="premium" value="prosciutto">Prosciutto<br>
+                <input type="checkbox" name="premium" value="porkbelly">Pork Belly<br>
+                <input type="checkbox" name="premium" value="artichoke">Artichoke<br>
+                <input type="checkbox" name="premium" value="truffles">Truffles<br>
+              </div>
+
+              <button type="button" class="btn btn-danger" id="build">Fire Your Pizza in the Oven!</button>
+            </form>
+          </div><!-- column pizza selections -->
+
+          <div class="col-md-4" id="pizza-list">
+            <h3>Currently in the oven:</h3>
+          </div>
+
+          <div class="col-md-4 well" id="pizza-details">
+
+          </div>
+        </div><!-- row pizza -->
+
+        <div class="row" id="info">
+          <form id="order-info">
+            <div class="row">
+              <div class="form-group col-md-6" id="contact-info">
+                <h3>Please enter your contact information below:</h3>
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" class="form-control" id="name">
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="text" class="form-control" id="phone" placeholder="e.g. 800-123-4567">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="text" class="form-control" id="email" placeholder="e.g. pizzalover@pizza.com">
+                </div>
+              </div><!-- column contact -->
+
+              <div class="form-group col-md-6" id="delivery-info">
+                <h3>Please enter your delivery address below:</h3>
+                <div class="form-group">
+                  <label for="street">Street</label>
+                  <input type="text" class="form-control" id="street">
+                </div>
+                <div class="form-group">
+                  <label for="city">City</label>
+                  <input type="text" class="form-control" id="city">
+                </div>
+                <div class="form-group">
+                  <label for="zip">Zip Code</label>
+                  <input type="text" class="form-control" id="zip">
+                </div>
+              </div><!-- column delivery -->
+            </div><!-- row contact-->
+
+            <div class="form-group">
+              <p>Select your delivery option:</p>
+              <select class="form-control" id="delivery">
+                <option>Pickup</option>
+                <option>Delivery</option>
+              </select>
+            </div>
+
+          </form>
+        </div><!-- row contact and address info -->
+
+        <button type="button" class="btn btn-primary btn-lg" id="submit-order">Submit Your Order</button>
+      </div><!-- container inputs -->
+
+      <div class="container" id="outputs">
+        <h2>Thank you for your order, <span id="inputted-name"></span>!</h2>
+        <h3>Your order total is $<span id="total-price"></span>. A copy of your receipt has been sent to your email at <span id="inputted-email"></span>.</h3>
+        <h4 id="pickup-comment">Your pizzas will be ready for pickup in approximately 30 minutes.</h4>
+        <h4 id="delivery-comment">Your pizzas will be delivered in approximately 30 minutes.</h4>
+      </div><!-- container outputs -->
+    </div><!-- container overall body -->
   </body>
 </html>
