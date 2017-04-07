@@ -28,7 +28,7 @@ Pizza.prototype.pizzaPrice = function(size, standard, premium) {
 $(document).ready(function() {
 
   $("#start").click(function(event) {
-    $("#welcome-page").slideUp();
+    $("#welcome-page").hide();
     $("#inputs").show();
   });
 
@@ -89,7 +89,7 @@ $(document).ready(function() {
     }
 
     $("#inputs").hide();
-    $("#outputs").slideDown();
+    $("#outputs").show();
 
     // delivery option
     if (deliveryOption === "delivery") {

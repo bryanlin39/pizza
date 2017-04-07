@@ -45,23 +45,25 @@
                 <input type="checkbox" name="premium" value=" Truffle">Truffle<br>
               </div>
 
-              <button type="submit" class="btn btn-danger" id="build">Fire Up Your Pizza in the Oven!</button>
+              <button type="submit" class="btn" id="build">Fire Up Your Pizza in the Oven!</button>
             </form>
           </div><!-- column pizza selections -->
 
-          <div class="col-md-4" id="pizza-list">
+          <div class="col-md-3" id="pizza-list">
             <h3>Currently in the oven:</h3>
             <ul id="oven">
             </ul>
           </div>
 
-          <div class="col-md-4 well" id="pizza-details">
+          <div class="col-md-3 well" id="pizza-details">
             <h3>Pizza # <span id="pizza-number"></span></h3>
             <h4><b>Size: </b><span id="pizza-size"></span></h4>
             <h4><b>Standard Toppings:</b><span id="pizza-standard-toppings"></span></h4>
             <h4><b>Premium Toppings:</b><span id="pizza-premium-toppings"></span></h4>
           </div>
         </div><!-- row pizza -->
+
+        <hr>
 
         <div class="row" id="info">
           <form id="order-info">
@@ -110,17 +112,17 @@
           </form>
         </div><!-- row contact and address info -->
 
-        <button type="button" class="btn btn-primary btn-lg" id="submit-order">Submit Your Order</button>
+        <button type="button" class="btn btn-success btn-lg" id="submit-order">Submit Your Order</button>
       </div><!-- container inputs -->
 
       <div class="container" id="outputs">
         <h2>Thank you for your order, <span id="inputted-name"></span>!</h2>
         <h3>Your order total is $<span id="total-price"></span>. A copy of your receipt has been sent to your email at <span id="inputted-email"></span>.</h3>
-        <h4 id="pickup-comment">Your pizzas will be ready for pickup in approximately 30 minutes.</h4>
-        <h4 id="delivery-comment">Your pizzas will be delivered to the address provided in approximately 30 minutes.</h4>
+        <h3 id="pickup-comment">Your pizzas will be ready for pickup in approximately 30 minutes.</h3>
+        <h3 id="delivery-comment">Your pizzas will be delivered to the address provided in approximately 30 minutes.</h3>
 
         <div class="well" id="receipt">
-          <h3>Receipt:</h3>
+          <h3 id="receipt-title">Receipt:</h3>
           <h4><b>Pizzas:</b></h4>
             <ul id="receipt-pizzas">
             </ul>

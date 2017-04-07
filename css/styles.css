@@ -9,13 +9,66 @@
 #welcome-page {
   text-align: center;
   margin-top: 200px;
-  background-image: url("/img/welcome.jpg")
+}
+
+#welcome-page h1 {
+  color: #474747;
+  font-size: 8vmin;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 #start {
-  background-color: white;
+  background-color: #af0c0c;
+  color: #ffffff;
   font-weight: bold;
   font-size: 5vmin;
   padding: 2%;
   box-shadow: grey 2px 2px 4px;
+}
+
+#inputs h3 {
+  font-weight: bold;
+}
+
+#build {
+  background-color: #af0c0c;
+  color: #ffffff;
+}
+
+.pizza {
+  font-size: 18px;
+  cursor: pointer;
+  color: #9e0000;
+}
+
+.pizza:hover {
+  text-decoration: underline;
+}
+
+#pizza-details {
+  background-color: #fcdc3a;
+  float: right;
+  margin: 20px;
+}
+
+#pizza-details h3 {
+  text-align: center;
+  margin-top: 0px;
+}
+
+#submit-order {
+  float: right;
+  margin-bottom: 25px;
+}
+
+#receipt {
+  margin-top: 20px;
+}
+
+#receipt-title {
+  margin-top: 0px;
+  margin-bottom: 15px;
+  text-decoration: underline;
+  font-weight: bold;
 }
