@@ -1,4 +1,7 @@
 // Business Logic
+var totalPrice = 0;
+var pizzaCounter = 0;
+
 function Pizza(number, size, standard, premium) {
   this.number = number;
   this.size = size;
@@ -6,16 +9,25 @@ function Pizza(number, size, standard, premium) {
   this.premium = premium;
 }
 
-Pizza.prototype.pizzaPrice = function(standard, premium) {
-  price += ((standard.length + premium.length) * sizePrice);
-  return price;
+Pizza.prototype.pizzaPrice = function(size, standard, premium) {
+  var sizePrice = 1;
+  var pizzaPrice = 6;
+  if (size === "Medium") {
+    sizePrice *= 1.5;
+  } else if (size === "Large") {
+    sizePrice *= 2;
+  } else if (size === "Party") {
+    sizePrice *= 2.5;
+  }
+  pizzaPrice = (pizzaPrice + (standard.length*2) + (premium.length*3)) * sizePrice;
+  totalPrice += pizzaPrice;
+  return pizzaPrice;
 }
 
 // User Interface Logic
 $(document).ready(function() {
-  var price = 6;
-  var pizzaCounter = 0;
 
+  // on-click for build button
   $("#build").click(function(event) {
     event.preventDefault();
 
@@ -34,23 +46,27 @@ $(document).ready(function() {
       inputtedPremiumToppings.push(premiumTopping);
     });
 
-    // call Pizza constructor
+    // call Pizza constructor and price prototype
     var newPizza = new Pizza(pizzaCounter, inputtedSize, inputtedStandardToppings, inputtedPremiumToppings);
 
-    $("#oven").append("<li><span class='pizza'>Pizza # " + newPizza.number + ", " + newPizza.size + "</span></li>");
+    var pizzaPrice = newPizza.pizzaPrice(newPizza.size, newPizza.standard, newPizza.premium);
 
-    $(".pizza").click(function() {
+    console.log(totalPrice, pizzaPrice);
+
+    // append pizzas list and show pizza details
+    $("#oven").append("<li><span class='pizza'>Pizza # " + newPizza.number + ", " + newPizza.size + "</span></li>");
+    $(".pizza").last().click(function() {
       $("#pizza-details").show();
-      $("#pizza-number").text(newPizza.number);
-      $("#pizza-size").text(newPizza.size);
-      $("#pizza-standard-toppings").text(newPizza.standard);
-      $("#pizza-premium-toppings").text(newPizza.premium);
+      $("#pizza-number").last().text(newPizza.number);
+      $("#pizza-size").last().text(newPizza.size);
+      $("#pizza-standard-toppings").last().text(newPizza.standard);
+      $("#pizza-premium-toppings").last().text(newPizza.premium);
     });
 
     $("#pizza-selections").trigger("reset");
-
-
-    // var newPizza = new Pizza(inputtedSize, inputtedStandard, inputtedPremium)
-
+    // end build button click
   });
+
+
+
 });
