@@ -30,7 +30,7 @@
                 <input type="checkbox" name="standard" value="pepperoni">Pepperoni<br>
                 <input type="checkbox" name="standard" value="sausage">Sausage<br>
                 <input type="checkbox" name="standard" value="mushroom">Mushroom<br>
-                <input type="checkbox" name="standard" value="jalapeno">Garlic<br>
+                <input type="checkbox" name="standard" value="garlic">Garlic<br>
               </div>
 
               <div class="form-group" id="premium-toppings">
@@ -38,15 +38,17 @@
                 <input type="checkbox" name="premium" value="prosciutto">Prosciutto<br>
                 <input type="checkbox" name="premium" value="porkbelly">Pork Belly<br>
                 <input type="checkbox" name="premium" value="artichoke">Artichoke<br>
-                <input type="checkbox" name="premium" value="truffles">Truffles<br>
+                <input type="checkbox" name="premium" value="truffle">Truffle<br>
               </div>
 
-              <button type="button" class="btn btn-danger" id="build">Fire Your Pizza in the Oven!</button>
+              <button type="submit" class="btn btn-danger" id="build">Fire Your Pizza in the Oven!</button>
             </form>
           </div><!-- column pizza selections -->
 
           <div class="col-md-4" id="pizza-list">
             <h3>Currently in the oven:</h3>
+            <ul id="oven">
+            </ul>
           </div>
 
           <div class="col-md-4 well" id="pizza-details">
@@ -93,8 +95,8 @@
             <div class="form-group">
               <p>Select your delivery option:</p>
               <select class="form-control" id="delivery">
-                <option>Pickup</option>
-                <option>Delivery</option>
+                <option value="pickup">Pick Up</option>
+                <option value="delivery">Delivery</option>
               </select>
             </div>
 

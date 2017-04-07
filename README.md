@@ -18,18 +18,18 @@ Pizza Ordering Application is a simple webpage that uses JavaScript objects to c
 * Increase price by $3 for each additional premium topping
   * _Example Input:_ Medium, sausage, mushroom, artichoke
   * _Example Output:_ $13.40
-* Increase price by 1.4x for each level of size increase
+* Increase price by 1.3x for each level of size increase
   * _Example Input:_ Medium, cheese
-  * _Example Output:_ $8.40
+  * _Example Output:_ $7.80
 * Increase final price by 1.1x for sales tax
   * _Example Input:_ Medium, cheese
-  * _Example Output:_ $9.24
+  * _Example Output:_ $8.58
 * Increase price by $4 for delivery
   * _Example Input:_ Medium, cheese with delivery
-  * _Example Output:_ $13.24
+  * _Example Output:_ $12.58
 * Add prices of multiple pizzas together
   * _Example Input:_ 2 medium, cheese pizzas
-  * _Example Output:_ $18.48
+  * _Example Output:_ $17.16
 
 ## Setup/Installation Requirements
 
